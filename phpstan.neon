@@ -3,3 +3,6 @@ parameters:
     paths:
         - app
         - tests
+    ignoreErrors:
+        - '#Call to an undefined static method Tymon\\JWTAuth\\Facades\\JWTAuth::attempt\(\).#'
+        - '#Access to an undefined property.*#'

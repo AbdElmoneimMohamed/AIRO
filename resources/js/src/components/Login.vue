@@ -4,7 +4,6 @@
             <h2 class="text-2xl font-bold text-center text-gray-900 dark:text-black mb-6">Login</h2>
 
             <form @submit.prevent="handleLogin" class="space-y-6">
-                <!-- Email Field -->
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 dark:text-black">Email</label>
                     <input
@@ -18,7 +17,6 @@
                     <p v-if="errors.email" class="text-red-500 text-sm mt-1">{{ errors.email[0] }}</p>
                 </div>
 
-                <!-- Password Field -->
                 <div>
                     <label for="password" class="block text-sm font-medium text-gray-700 dark:text-black">Password</label>
                     <input
@@ -32,7 +30,6 @@
                     <p v-if="errors.password" class="text-red-500 text-sm mt-1">{{ errors.password }}</p>
                 </div>
 
-                <!-- Login Button -->
                 <button
                     type="submit"
                     class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition"

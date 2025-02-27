@@ -1,12 +1,12 @@
 # AIRO Ltd. Full-Stack Developer Task
 
-This project is a **Laravel 12 + Vue.js** application for a **quotation system**.  
+This project is a **Laravel 11 + Vue.js** application for a **quotation system**.  
 It includes **JWT authentication**, API endpoints, and a frontend form to collect user input, fetch quotations, and display results.
 
 ---
 
 ## 🚀 Features
-- **Laravel 12 Backend** with API endpoints.
+- **Laravel 11 Backend** with API endpoints.
 - **Vue.js 3 Frontend** with Vue Router & Pinia.
 - **JWT Authentication** using `tymon/jwt-auth`.
 - **Quotation API** calculating prices based on age & trip length.
@@ -20,8 +20,15 @@ It includes **JWT authentication**, API endpoints, and a frontend form to collec
 
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/your-repo/airo-quotation.git
-cd airo-quotation
+git clone https://github.com/AbdElmoneimMohamed/AIRO.git
+cd AIRO
+```
+
+### **1️⃣ login credentials**
+```bash
+email : test@airo.com
+pasword : 123123
+```
 
 
 ## Usage

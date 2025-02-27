@@ -4,7 +4,6 @@
             <h2 class="text-2xl font-bold text-center text-gray-900 dark:text-black mb-6">Get a Quotation</h2>
 
             <form @submit.prevent="fetchQuotation" class="space-y-6">
-                <!-- Age Field -->
                 <div>
                     <label for="age" class="block text-sm font-medium text-gray-700 dark:text-black">Age (comma separated)</label>
                     <input
@@ -17,7 +16,6 @@
                     <p v-if="errors.age" class="text-red-500 text-sm mt-1">{{ errors.age[0] }}</p>
                 </div>
 
-                <!-- Start Date Field -->
                 <div>
                     <label for="start_date" class="block text-sm font-medium text-gray-700 dark:text-black">Start Date</label>
                     <input
@@ -29,7 +27,6 @@
                     <p v-if="errors.start_date" class="text-red-500 text-sm mt-1">{{ errors.start_date[0] }}</p>
                 </div>
 
-                <!-- End Date Field -->
                 <div>
                     <label for="end_date" class="block text-sm font-medium text-gray-700 dark:text-black">End Date</label>
                     <input
@@ -41,7 +38,6 @@
                     <p v-if="errors.end_date" class="text-red-500 text-sm mt-1">{{ errors.end_date[0] }}</p>
                 </div>
 
-                <!-- Currency Field -->
                 <div>
                     <label for="currency_id" class="block text-sm font-medium text-gray-700 dark:text-black">Currency</label>
                     <select
@@ -56,7 +52,6 @@
                     <p v-if="errors.currency_id" class="text-red-500 text-sm mt-1">{{ errors.currency_id[0] }}</p>
                 </div>
 
-                <!-- Buttons -->
                 <div class="flex justify-between">
                     <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-lg transition">
                         Get Quote
@@ -67,13 +62,11 @@
                 </div>
             </form>
 
-            <!-- Quotation Results -->
             <div v-if="quote" class="mt-6 p-4 bg-gray-100 dark:bg-white-700 rounded-lg">
                 <p class="text-lg font-semibold text-gray-900 dark:text-black">Total: {{ quote.total }} {{ quote.currency_id }}</p>
                 <p class="text-sm text-gray-600 dark:text-black">Quotation ID: {{ quote.quotation_id }}</p>
             </div>
 
-            <!-- General Error Message -->
             <p v-if="errors.general" class="text-red-500 text-sm mt-3 text-center">{{ errors.general }}</p>
         </div>
     </div>
@@ -97,11 +90,11 @@ export default {
         const router = useRouter();
 
         const fetchQuotation = async () => {
-            errors.value = {}; // Reset errors
+            errors.value = {};
 
             try {
                 const response = await axios.post(
-                    "http://localhost/api/quotation",
+                    "/quotation",
                     {
                         age: age.value,
                         start_date: start_date.value,

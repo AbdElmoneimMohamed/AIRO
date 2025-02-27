@@ -17,7 +17,7 @@ rebuild:
 	make restart;
 
 ssh:
-	docker exec -it airo-project-laravel.test-1 bash
+	docker exec -it airo-laravel.test-1 bash
 
 restart:
 	make stop; make start;
@@ -26,11 +26,14 @@ restart:
 local-setup:
 	cp .env.example .env
 	composer install;
+	$(SAIL) build --no-cache;
 	make start;
 	$(SAIL) artisan key:generate;
 	$(SAIL) artisan storage:link;
+	$(SAIL) artisan jwt:secret;
 	make migrate;
 	npm install
+	npm run dev
 
 migrate:
 	$(SAIL) artisan migrate:fresh --seed;
